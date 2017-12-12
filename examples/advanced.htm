@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SimpleItemFilter Demo</title>
+	<style type="text/css">
+    .demo {
+      border: solid 1px black;
+    }
+		.st-ul {
+			list-style-type: none;
+			display: inline-flex;
+		}
+    .st-ul li {
+      margin: 5px;
+      padding: 2px;
+    }
+    
+    .sf-btn {
+      border-width: 1px;
+			border-radius: 5px;
+      border-style: solid;
+    }
+    
+		.sf-btn-primary {
+			border-color: blue;
+      color: blue;
+		}
+    .sf-btn-primary.sf-active {
+			border-color: blue;
+      color: white;
+      background-color: blue;
+		}
+    
+    .sf-btn-secondary {
+      border-color: green;
+      color: green;
+    }
+    .sf-btn-secondary.sf-active {
+      border-color: green;
+      color: white;
+      background-color: green;
+    }
+    
+    .sf-hidden {
+      display: none;
+    }
+    
+    .sf-fade {
+      opacity: 0.25;
+    }
+	</style>
+</head>
+<body>
+<h3>Clothes All</h3>
+Example of taking advantage of the bubbling of events to detect clicks on child elements. </br>
+<div class="demo-clothes-all demo">
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-all"><span>All</span></li>
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-mens"><span>Mens</span</li>
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-womens"><span>Womens<span></li>
+	</ul>
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-all"><span>All</span></li>
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-tops"><span>Tops</span></li>
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-bottoms"><span>Bottoms</span></li>
+	</ul>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-bottoms">Cargo Shorts</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-tops">Tank Top</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-tops">Under-Shirt</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-tops">T-Shirt(Mens)</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-tops">T-Shirt(Womens)</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-bottoms">Leggings</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-womens sf-f-tops">Hoodie</div>
+</div>
+<script src="simple-item-filter.js"></script>
+<script type="text/javascript">
+
+	
+  var clothes_all = new SimpleItemFilter('clothes-all',{
+    'toggle' : false,
+    'btnFn' : function(e) {
+      if (e.target.tagName == "SPAN") return true;
+      return false;
+    }
+  });
+</script>
+</body>
+</html>

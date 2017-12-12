@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SimpleItemFilter Demo</title>
+	<style type="text/css">
+    .demo {
+      border: solid 1px black;
+    }
+		.st-ul {
+			list-style-type: none;
+			display: inline-flex;
+		}
+    .st-ul li {
+      margin: 5px;
+      padding: 2px;
+    }
+    
+    .sf-btn {
+      border-width: 1px;
+			border-radius: 5px;
+      border-style: solid;
+    }
+    
+		.sf-btn-primary {
+			border-color: blue;
+      color: blue;
+		}
+    .sf-btn-primary.sf-active {
+			border-color: blue;
+      color: white;
+      background-color: blue;
+		}
+    
+    .sf-btn-secondary {
+      border-color: green;
+      color: green;
+    }
+    .sf-btn-secondary.sf-active {
+      border-color: green;
+      color: white;
+      background-color: green;
+    }
+    
+    .sf-hidden {
+      display: none;
+    }
+    
+    .sf-fade {
+      opacity: 0.25;
+    }
+	</style>
+</head>
+<body>
+<h3>Food</h3>
+All Default Settings</br>
+<div class="demo-food demo">
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-primary sf-g-food sf-f-all">All</li>
+		<li class="sf-btn sf-btn-primary sf-g-food sf-f-fruit">Fruit</li>
+		<li class="sf-btn sf-btn-primary sf-g-food sf-f-veggie">Veggie</li>
+	</ul>
+	<div class="sf-item sf-g-food sf-f-veggie">Carrot</div>
+	<div class="sf-item sf-g-food sf-f-veggie">Cucumber</div>
+	<div class="sf-item sf-g-food sf-f-fruit">Mango</div>
+	<div class="sf-item sf-g-food sf-f-veggie">Beans</div>
+	<div class="sf-item sf-g-food sf-f-fruit">Apple</div>
+	<div class="sf-item sf-g-food sf-f-fruit">Pear</div>
+	<div class="sf-item sf-g-food sf-f-fruit">Orange</div>
+</div>
+<h3>Clothes All</h3>
+Toggle turned off </br>
+<div class="demo-clothes-all demo">
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-all">All</li>
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-mens">Mens</li>
+		<li class="sf-btn sf-btn-primary sf-g-clothes-all sf-f-womens">Womens</li>
+	</ul>
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-all">All</li>
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-tops">Tops</li>
+		<li class="sf-btn sf-btn-secondary sf-g-clothes-all sf-f-bottoms">Bottoms</li>
+	</ul>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-bottoms">Cargo Shorts</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-tops">Tank Top</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-tops">Under-Shirt</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-tops">T-Shirt(Mens)</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-tops">T-Shirt(Womens)</div>
+	<div class="sf-item sf-g-clothes-all sf-f-womens sf-f-bottoms">Leggings</div>
+	<div class="sf-item sf-g-clothes-all sf-f-mens sf-f-womens sf-f-tops">Hoodie</div>
+</div>
+<h3>Clothes All</h3>
+multiselect on</br>
+<div class="demo-clothes demo">
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-primary sf-g-clothes sf-f-mens">Mens</li>
+		<li class="sf-btn sf-btn-primary sf-g-clothes sf-f-womens">Womens</li>
+	</ul>
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-secondary sf-g-clothes sf-f-bottoms">Bottoms</li>
+		<li class="sf-btn sf-btn-secondary sf-g-clothes sf-f-tops">Tops</li>
+	</ul>
+	<div class="sf-item sf-g-clothes sf-f-mens sf-f-bottoms">Cargo Shorts</div>
+	<div class="sf-item sf-g-clothes sf-f-womens sf-f-tops">Tank Top</div>
+	<div class="sf-item sf-g-clothes sf-f-mens sf-f-tops">Under-Shirt</div>
+	<div class="sf-item sf-g-clothes sf-f-mens sf-f-tops">T-Shirt(Mens)</div>
+	<div class="sf-item sf-g-clothes sf-f-womens sf-f-tops">T-Shirt(Womens)</div>
+	<div class="sf-item sf-g-clothes sf-f-womens sf-f-bottoms">Leggings</div>
+	<div class="sf-item sf-g-clothes sf-f-mens sf-f-womens sf-f-tops">Hoodie</div>
+</div>
+<h3>Books</h3>
+Multiselect on, fade on </br>
+<div class="demo-books-multiselect demo">
+	<ul class="st-ul">
+		<li class="sf-btn sf-btn-primary sf-g-books sf-f-fantasy">Fantasy</li>
+		<li class="sf-btn sf-btn-primary sf-g-books sf-f-law">Law</li>
+		<li class="sf-btn sf-btn-primary sf-g-books sf-f-romance">Romance</li>
+		<li class="sf-btn sf-btn-primary sf-g-books sf-f-poetry">Poetry</li>
+		<li class="sf-btn sf-btn-primary sf-g-books sf-f-a-and-a">Action and Adventure</li>
+	</ul>
+	<div class="sf-item sf-g-books sf-f-fantasy">Eragon</div>
+	<div class="sf-item sf-g-books sf-f-fantasy">Eldest</div>
+	<div class="sf-item sf-g-books sf-f-romance">Pride and Prejudice</div>
+	<div class="sf-item sf-g-books sf-f-romance">A Walk to Remember</div>
+	<div class="sf-item sf-g-books sf-f-law">The Accociate</div>
+	<div class="sf-item sf-g-books sf-f-law">The Rain Maker</div>
+	<div class="sf-item sf-g-books sf-f-law">A Civil Action</div>
+	<div class="sf-item sf-g-books sf-f-fantasy">The Fellowship of the Ring</div>
+	<div class="sf-item sf-g-books sf-f-fantasy">The Return of the King</div>
+	<div class="sf-item sf-g-books sf-f-poetry">Where the Sidewalk Ends</div>
+	<div class="sf-item sf-g-books sf-f-poetry">Paradise Lost</div>
+	<div class="sf-item sf-g-books sf-f-a-and-a">Treasure Island</div>
+	<div class="sf-item sf-g-books sf-f-a-and-a">Moby Dick</div>
+	<div class="sf-item sf-g-books sf-f-a-and-a">Life of Pi</div>
+</div>
+<script src="simple-item-filter.js"></script>
+<script type="text/javascript">
+  
+  var food = new SimpleItemFilter('food');
+  var clothes_all = new SimpleItemFilter('clothes-all',{
+    'toggle' : false
+  });
+  var clothes = new SimpleItemFilter('clothes',{
+    'multiselect' : true
+  });
+  var books = new SimpleItemFilter('books',{
+    'multiselect' : true,
+    'fade' : true
+  });
+</script>
+</body>
+</html>

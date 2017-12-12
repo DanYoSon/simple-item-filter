@@ -1,0 +1,36 @@
+{
+  "name": "simple-item-filter",
+  "version": "1.0.0",
+  "description": "A js library for simply filtering groups of items on a page using only CSS classes",
+  "main": "simple-item-filter.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-cli": "^1.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "jsdoc": "^3.5.4",
+    "minami": "^1.2.3",
+    "pump": "^2.0.0"
+  },
+  "scripts": {
+    "build": "gulp",
+    "docs": "jsdoc -c jsdoc.json -d dist/docs src/simple-item-filter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DanYoSon/simple-item-filter.git"
+  },
+  "author": "Daniel Idzerda",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/DanYoSon/simple-item-filter/issues"
+  },
+  "homepage": "https://github.com/DanYoSon/simple-item-filter#README"
+}
