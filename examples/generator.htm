@@ -1,0 +1,99 @@
+
+
+<input type="text" name="group" class="sf-generator-input"> Filter Group</br>
+<input type="text" name="prefix" class="sf-generator-input"> Prefix</br>
+<input type="text" name="active-class" class="sf-generator-input"> Active class (prefix is not automatically added)</br>
+<input type="text" name="hidden-class" class="sf-generator-input"> Hidden class (prefix is not automatically added)</br>
+<input type="checkbox" name="multiselect" class="sf-generator-input"> Multiselect?</br>
+<input type="checkbox" name="fade" class="sf-generator-input"> Fade?</br>
+<input type="text" name="fade-class" class="sf-generator-input"> Fade Class (prefix is not automatically added)</br>
+<input type="checkbox" name="toggle" class="sf-generator-input" checked> Enable Toggle?</br>
+
+<textarea id="generator-output" style="width:500px; height:300px;"></textarea>
+<script type="text/javascript">
+	let sf_generator_inputs = document.getElementsByClassName('sf-generator-input');
+
+	for (var i = sf_generator_inputs.length - 1; i >= 0; i--) {
+		sf_generator_inputs[i].addEventListener('change', sf_change_handler);
+	}
+
+	function sf_generator_output(options) {
+		let args = false;
+		let textarea  = document.getElementById('generator-output');
+		if (undefined === options['group']) {
+			textarea.value = `A group must be defined`;
+			return 1;
+		}
+		let output = `new SimpleItemFilter("${options['group']}"`
+		if (undefined !== options['prefix']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"prefix" => "${options['prefix']}"\n`;
+		}
+		if (undefined !== options['active-class']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"active-class" => "${options['active-class']}"\n`;
+		}
+		if (undefined !== options['hidden-class']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"hidden-class" => "${options['hidden-class']}"\n`;
+		}
+		if (true === options['multiselect']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"multiselect" => "${options['multiselect']}"\n`;
+		}
+		if (true === options['fade']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"fade" => "${options['fade']}"\n`;
+		}
+		if (undefined !== options['fade-class']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"fade-class" => "${options['fade-class']}"\n`;
+		}
+		if (false === options['toggle']) {
+			if (false === args) {
+				output += `\n\t{\n`;
+				args = true;
+			}
+			output += `\t"toggle" => "${options['toggle']}"\n`;
+		}
+		if (true === args) {
+			output += `\t}\n`;
+		}
+		output += `);`;
+		
+		textarea.value = output;
+		return 0;
+	}
+
+	function sf_change_handler(evt) {
+		let inputs = document.getElementsByClassName('sf-generator-input');
+		options = {};
+		options['group'] = ('' !== inputs['group'].value) ? inputs['group'].value : undefined;
+		options['prefix'] = ('' !== inputs['prefix'].value) ? inputs['prefix'].value : undefined;
+		options['active-class'] = ('' !== inputs['active-class'].value) ? inputs['active-class'].value : undefined;
+		options['hidden-class'] = ('' !== inputs['hidden-class'].value) ? inputs['hidden-class'].value : undefined;
+		options['multiselect'] = inputs['multiselect'].checked;
+		options['fade'] = inputs['fade'].checked;
+		options['fade-class'] = ('' !== inputs['fade-class'].value) ? inputs['fade-class'].value : undefined;
+		options['toggle'] = inputs['toggle'].checked;
+		sf_generator_output(options);
+	}
+</script>
